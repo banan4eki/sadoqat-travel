@@ -24,7 +24,7 @@ ol {
     list-style: none;
 }
 
-body{
+body {
     font-family: 'Montserrat Alternates';
 }
 
@@ -86,7 +86,8 @@ body{
                     transition: .2s linear;
 
                     @media (max-width: 350px) {
-                        font-size: 14px;
+                        font-size: 11px;
+                        text-align: center;
                     }
                 }
 
@@ -178,6 +179,7 @@ body{
                 border-radius: 10px;
                 cursor: pointer;
                 transition: 0.2s linear;
+                
             }
 
             &-btn:hover {
@@ -352,6 +354,10 @@ body{
                 font-size: 42px;
                 font-weight: 400;
                 margin-bottom: 20px;
+
+                @media (max-width: 388px) {
+                    font-size: 30px;
+                }
             }
 
             &-text {
@@ -510,6 +516,10 @@ body{
                 font-size: 16px;
                 font-weight: 400;
                 margin-bottom: 10px;
+
+                @media (max-width: 376px){
+                    text-align: center;
+                }
             }
 
             &-title {
@@ -517,6 +527,10 @@ body{
                 font-size: 42px;
                 font-weight: 400;
                 text-align: center;
+
+                @media (max-width: 376px){
+                    font-size: 35px;
+                }
             }
 
 
@@ -622,7 +636,7 @@ body{
                 margin-bottom: 5px;
 
                 @media (max-width: 422px) {
-                    font-size: 35px;
+                    font-size: 25px;
                 }
             }
 
@@ -630,6 +644,10 @@ body{
                 color: #697687;
                 font-size: 14px;
                 font-weight: 500;
+
+                @media (max-width: 422px) {
+                    font-size: 12px;
+                }
             }
 
 
@@ -678,6 +696,10 @@ body{
             display: flex;
             justify-content: center;
             margin-top: -100px;
+
+            img{
+                width: 120px;
+            }
         }
 
         &-info {
@@ -768,7 +790,7 @@ body{
 
 
                 @media (max-width: 410px) {
-                    font-size: 35px;
+                    font-size: 25px;
                 }
             }
 
@@ -873,7 +895,7 @@ body{
                 font-weight: 400;
 
                 @media (max-width: 672px) {
-                    font-size: 30px;
+                    font-size: 25px;
                 }
             }
         }
@@ -1453,6 +1475,7 @@ body{
             justify-content: center;
             margin-top: 30px;
             margin-right: 55px;
+            text-align: center;
 
             @media (max-width: 440px) {
                 margin-right: 0px;

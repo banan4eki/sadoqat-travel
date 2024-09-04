@@ -82,7 +82,8 @@ body {
 }
 @media (max-width: 350px) {
   .header__nav-content-list-link {
-    font-size: 14px;
+    font-size: 11px;
+    text-align: center;
   }
 }
 .header__nav-content-list-link:hover {
@@ -324,6 +325,11 @@ body {
   font-weight: 400;
   margin-bottom: 20px;
 }
+@media (max-width: 388px) {
+  .Recommended__place-content-info-title {
+    font-size: 30px;
+  }
+}
 .Recommended__place-content-info-text {
   color: #697687;
   font-size: 16px;
@@ -468,11 +474,21 @@ body {
   font-weight: 400;
   margin-bottom: 10px;
 }
+@media (max-width: 376px) {
+  .perfection__drive-content-info-theme {
+    text-align: center;
+  }
+}
 .perfection__drive-content-info-title {
   color: #002248;
   font-size: 42px;
   font-weight: 400;
   text-align: center;
+}
+@media (max-width: 376px) {
+  .perfection__drive-content-info-title {
+    font-size: 35px;
+  }
 }
 .perfection__drive-content-bg {
   display: grid;
@@ -565,13 +581,18 @@ body {
 }
 @media (max-width: 422px) {
   .guide__open-content-info-title {
-    font-size: 35px;
+    font-size: 25px;
   }
 }
 .guide__open-content-info-text {
   color: #697687;
   font-size: 14px;
   font-weight: 500;
+}
+@media (max-width: 422px) {
+  .guide__open-content-info-text {
+    font-size: 12px;
+  }
 }
 .guide__open-content-info-btn {
   width: 170px;
@@ -612,6 +633,9 @@ body {
   display: flex;
   justify-content: center;
   margin-top: -100px;
+}
+.great__place-content-compas img {
+  width: 120px;
 }
 .great__place-content-info-theme {
   color: #00B3A0;
@@ -689,7 +713,7 @@ body {
 }
 @media (max-width: 410px) {
   .clients__speaks-content-info-title {
-    font-size: 35px;
+    font-size: 25px;
   }
 }
 .clients__speaks-content-info-text {
@@ -787,7 +811,7 @@ body {
 }
 @media (max-width: 672px) {
   .gallery__inst-content-info-title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 .gallery__inst-content-btn {
@@ -1280,6 +1304,7 @@ body {
   justify-content: center;
   margin-top: 30px;
   margin-right: 55px;
+  text-align: center;
 }
 @media (max-width: 440px) {
   .footer__content-text {
