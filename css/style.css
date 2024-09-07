@@ -55,6 +55,7 @@ body {
 }
 @media (max-width: 910px) {
   .header__nav {
+    background: white;
     height: 200px !important;
   }
 }
@@ -64,15 +65,16 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 910px) {
-  .header__nav-content {
-    flex-direction: column;
-  }
-}
 .header__nav-content-list {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 100px;
+}
+@media (max-width: 910px) {
+  .header__nav-content-list {
+    display: none;
+  }
 }
 .header__nav-content-list-link {
   color: #FFFFFF;
@@ -91,7 +93,94 @@ body {
   transition: 0.2s linear;
 }
 .header__nav-content li {
-  margin-right: 30px;
+  margin-right: 50px;
+}
+.header__nav-content .burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.header__nav-content .burger {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 26px;
+  margin: 30px auto;
+}
+@media (max-width: 910px) {
+  .header__nav-content .burger {
+    display: flex;
+  }
+}
+.header__nav-content .menu-item {
+  display: none;
+}
+@media (max-width: 910px) {
+  .header__nav-content .burger::before,
+  .header__nav-content .burger::after {
+    content: "";
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #000;
+  }
+  .header__nav-content .burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 #000;
+    transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+  }
+  .header__nav-content .burger::after {
+    bottom: 0;
+    transition: bottom 0.3s 0.15s, transform 0.3s;
+  }
+  .header__nav-content .burger-checkbox:checked + .burger::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+  }
+  .header__nav-content .burger-checkbox:checked + .burger::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom 0.3s, transform 0.3s 0.15s;
+  }
+  .header__nav-content .menu-list {
+    top: 197px;
+    left: 0;
+    position: absolute;
+    display: grid;
+    gap: 12px;
+    padding: 42px 0;
+    margin: 0;
+    background: rgba(49, 49, 49, 0.184);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    width: 100vw;
+  }
+  .header__nav-content .menu-item {
+    display: block;
+    padding: 8px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.2s linear;
+    text-align: center;
+  }
+}
+.header__nav-content .menu-item:hover {
+  color: #03dfc9;
+  transition: 0.2s linear;
+}
+.header__nav-content .burger-checkbox:checked ~ .menu-list {
+  transform: translateX(0);
 }
 .header__nav-content-btn {
   width: 102px;
@@ -104,11 +193,18 @@ body {
   border: 2px solid #3685FB;
   border-radius: 15px;
   cursor: pointer;
+  margin-left: 50px;
 }
 @media (max-width: 910px) {
   .header__nav-content-btn {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     margin-top: 20px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 910px) {
+  .header__nav-content-btn {
+    color: #002248;
   }
 }
 .header__drive {
@@ -180,7 +276,7 @@ body {
 }
 
 .header-2 {
-  height: 16 0vh;
+  height: 160vh;
   background-image: url(../img/Ellipse\ 6.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -380,9 +476,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 260px;
+  margin-top: 320px;
   padding: 20px;
   position: relative;
+  transition: 0.2s linear;
 }
 @media (max-width: 376px) {
   .Recommended__place-content-bg-block-info {
@@ -396,7 +493,7 @@ body {
 }
 @media (max-width: 376px) {
   .Recommended__place-content-bg-block-info-text {
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 .Recommended__place-content-bg-block-info-star {
@@ -420,6 +517,7 @@ body {
   cursor: pointer;
   margin-top: 20px;
   transition: 0.2s linear;
+  transform: scale(0);
 }
 .Recommended__place-content-bg-block-info-btn:hover {
   color: #3685FB;
@@ -428,7 +526,7 @@ body {
   box-shadow: 0 0 0 5px rgba(59, 131, 246, 0.3725490196);
   transition: 0.2s linear;
 }
-.Recommended__place-content-bg-block-2 {
+.Recommended__place-content-bg-block:nth-of-type(2) {
   width: 370px;
   height: 500px;
   border-radius: 10px;
@@ -439,11 +537,11 @@ body {
   padding: 30px;
 }
 @media (max-width: 376px) {
-  .Recommended__place-content-bg-block-2 {
+  .Recommended__place-content-bg-block:nth-of-type(2) {
     width: 290px;
   }
 }
-.Recommended__place-content-bg-block-3 {
+.Recommended__place-content-bg-block:nth-of-type(3) {
   width: 370px;
   height: 500px;
   border-radius: 10px;
@@ -454,9 +552,17 @@ body {
   padding: 30px;
 }
 @media (max-width: 376px) {
-  .Recommended__place-content-bg-block-3 {
+  .Recommended__place-content-bg-block:nth-of-type(3) {
     width: 290px;
   }
+}
+.Recommended__place-content-bg-block:hover .Recommended__place-content-bg-block-info {
+  margin-top: 260px;
+  transition: 0.2s linear;
+}
+.Recommended__place-content-bg-block:hover .Recommended__place-content-bg-block-info-btn {
+  transform: scale(1);
+  transition: 0.2s linear;
 }
 
 .perfection__drive {
@@ -1005,9 +1111,25 @@ body {
   font-size: 46px;
   font-weight: 700;
 }
+@media (max-width: 440px) {
+  .thailand__bag-content-block-travel-title {
+    font-size: 35px;
+    margin-left: 3rem;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-travel {
+    width: 50px;
+  }
+}
 .thailand__bag-content-block-info {
   margin-top: 15px;
   margin-left: 100px;
+}
+@media (max-width: 390px) {
+  .thailand__bag-content-block-info {
+    margin-left: 80px;
+  }
 }
 .thailand__bag-content-block-info-tour-title {
   color: #000000;
@@ -1017,10 +1139,25 @@ body {
 .thailand__bag-content-block-info-tour-title span {
   color: #3685FB;
 }
+@media (max-width: 572px) {
+  .thailand__bag-content-block-info-tour-title {
+    font-size: 25px;
+  }
+}
+@media (max-width: 434px) {
+  .thailand__bag-content-block-info-tour-title {
+    font-size: 15px;
+  }
+}
 .thailand__bag-content-block-info-tour-text {
   color: black;
   font-size: 22px;
   font-weight: 700;
+}
+@media (max-width: 434px) {
+  .thailand__bag-content-block-info-tour-text {
+    font-size: 15px;
+  }
 }
 .thailand__bag-content-block-info-tour-text span {
   color: #00B3A0;
@@ -1032,6 +1169,11 @@ body {
   opacity: 0.3;
   margin-top: 10px;
 }
+@media (max-width: 572px) {
+  .thailand__bag-content-block-info-line {
+    display: none;
+  }
+}
 .thailand__bag-content-block-info-price {
   margin-top: 15px;
 }
@@ -1040,6 +1182,16 @@ body {
   font-size: 22px;
   font-weight: 700;
 }
+@media (max-width: 488px) {
+  .thailand__bag-content-block-info-price-title {
+    font-size: 17px;
+  }
+}
+@media (max-width: 434px) {
+  .thailand__bag-content-block-info-price-title {
+    font-size: 11px;
+  }
+}
 .thailand__bag-content-block-info-price-list {
   margin-bottom: 15px;
 }
@@ -1047,6 +1199,11 @@ body {
   color: #000000;
   font-size: 14px;
   font-weight: 500;
+}
+@media (max-width: 488px) {
+  .thailand__bag-content-block-info-price-list-link {
+    font-size: 11px !important;
+  }
 }
 .thailand__bag-content-block-info-title {
   color: #000000;
@@ -1059,6 +1216,17 @@ body {
 .thailand__bag-content-block-info-title span {
   color: #00B3A0;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-title {
+    font-size: 18px;
+    margin-left: 0px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-title {
+    font-size: 15px;
+  }
+}
 .thailand__bag-content-block-info-book {
   width: 381px;
   height: 339px;
@@ -1067,11 +1235,33 @@ body {
   padding: 20px;
   position: relative;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book {
+    width: 300px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book {
+    width: 220px;
+    padding: 10px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .thailand__bag-content-block-info-book {
+    width: 195px;
+  }
+}
 .thailand__bag-content-block-info-book-title {
   color: #00B3A0;
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 18px;
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-title {
+    font-size: 18px;
+  }
 }
 .thailand__bag-content-block-info-book-location {
   display: flex;
@@ -1081,11 +1271,26 @@ body {
   color: #00B3A0;
   font-size: 42px;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-location-i {
+    font-size: 30px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-location-i {
+    font-size: 22px;
+  }
+}
 .thailand__bag-content-block-info-book-location-text {
   color: #000000;
   font-size: 14px;
   font-weight: 500;
   margin-left: 15px;
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-location-text {
+    font-size: 12px;
+  }
 }
 .thailand__bag-content-block-info-book-headphone {
   display: flex;
@@ -1096,14 +1301,33 @@ body {
   color: #00B3A0;
   font-size: 42px;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-headphone i {
+    font-size: 30px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-headphone i {
+    font-size: 22px;
+  }
+}
 .thailand__bag-content-block-info-book-headphone-name {
   width: 120px;
   height: 28px;
-  margin-left: 15px;
   border: 2px solid #EFEFEF;
   outline: none;
   padding: 10px;
   margin-left: 27px;
+}
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-headphone-name {
+    width: 90px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-headphone-name {
+    width: 60px;
+  }
 }
 .thailand__bag-content-block-info-book-headphone-number {
   width: 120px;
@@ -1115,6 +1339,17 @@ body {
   color: #707070;
   font-size: 10px;
   font-weight: 500;
+}
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-headphone-number {
+    width: 90px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-headphone-number {
+    width: 60px;
+    margin-left: 0;
+  }
 }
 .thailand__bag-content-block-info-book-headphone input::-webkit-outer-spin-button,
 .thailand__bag-content-block-info-book-headphone input::-webkit-inner-spin-button {
@@ -1128,6 +1363,16 @@ body {
 .thailand__bag-content-block-info-book-date i {
   color: #00B3A0;
   font-size: 42px;
+}
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-date i {
+    font-size: 30px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-date i {
+    font-size: 22px;
+  }
 }
 .thailand__bag-content-block-info-book-date-text {
   color: #707070;
@@ -1148,6 +1393,18 @@ body {
   color: #707070;
   margin-right: -20px;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-date-inpt {
+    width: 90px;
+    margin-left: 6px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-date-inpt {
+    width: 60px;
+    margin-left: 0px;
+  }
+}
 .thailand__bag-content-block-info-book-btn {
   width: 286px;
   height: 51px;
@@ -1161,6 +1418,16 @@ body {
   margin-top: 25px;
   transition: 0.2s linear;
 }
+@media (max-width: 534px) {
+  .thailand__bag-content-block-info-book-btn {
+    width: 230px;
+  }
+}
+@media (max-width: 440px) {
+  .thailand__bag-content-block-info-book-btn {
+    width: 160px;
+  }
+}
 .thailand__bag-content-block-info-book-btn:hover {
   color: #3685FB;
   background: white;
@@ -1171,7 +1438,12 @@ body {
 .thailand__bag-content-block-info img {
   height: 720px;
   margin-left: 557px;
-  margin-top: -690px;
+  margin-top: -710px;
+}
+@media (max-width: 998px) {
+  .thailand__bag-content-block-info-img {
+    display: none;
+  }
 }
 
 .payment__click-content {
@@ -1187,6 +1459,11 @@ body {
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
   border-radius: 25px;
+}
+@media (max-width: 440px) {
+  .payment__click-content-block {
+    margin-top: -40px !important;
+  }
 }
 .payment__click-content-block-title {
   color: #000000;
@@ -1218,6 +1495,11 @@ body {
   cursor: pointer;
   margin-bottom: 25px;
   transition: 0.2s linear;
+}
+@media (max-width: 440px) {
+  .payment__click-content-block-btn {
+    width: 250px;
+  }
 }
 .payment__click-content-block-btn:hover {
   color: #3685FB;
