@@ -26,6 +26,7 @@ ol {
 
 body {
     font-family: 'Montserrat Alternates';
+    scroll-behavior: smooth;
 }
 
 
@@ -179,15 +180,17 @@ body {
                 left: 0;
                 position: absolute;
                 display: grid;
-                gap: 12px;
-                padding: 42px 0;
+                gap: 15px;
+                padding-top: 30px;
+                padding-bottom: 20px;
                 margin: 0;
-                background: rgba(49, 49, 49, 0.184);
+                background: rgba(37, 37, 37, 0.184);
                 backdrop-filter: blur(5px);
                 list-style-type: none;
                 transform: translateX(-100%);
                 transition: .3s;
                 width: 100vw;
+                height: 300px;
             }
 
         
@@ -195,12 +198,12 @@ body {
 
             .menu-item {
                 display: block;
-                padding: 8px;
                 color: #FFFFFF;
                 font-size: 16px;
                 font-weight: 700;
                 transition: .2s linear;
                 text-align: center;
+                padding-left: 65px;
             }
 
         }
